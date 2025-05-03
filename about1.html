@@ -1,38 +1,128 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>عن العيادة</title>
-  <link rel="stylesheet" href="style.css">
+  <title>عن الدكتور - Ahmed Dental</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #f4f9ff;
+      padding: 30px;
+      color: #333;
+      margin: 0;
+    }
+    .navbar {
+      background-color: #0077cc;
+      padding: 15px;
+      text-align: center;
+    }
+    .navbar a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .navbar a.active {
+      text-decoration: underline;
+    }
+    .about-section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #0077cc;
+      font-size: 36px;
+    }
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    .doctor-img {
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .about-text {
+      max-width: 600px;
+      padding: 20px;
+      text-align: right;
+    }
+    .about-text h2 {
+      color: #0077cc;
+      font-size: 28px;
+    }
+    .sub {
+      font-size: 18px;
+      color: #777;
+    }
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .gallery-btn {
+      background-color: #0077cc;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .gallery-btn:hover {
+      background-color: #005fa3;
+    }
+    .services-preview {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .services-preview h2 {
+      color: #0077cc;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
 
   <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="about.html" class="active">About</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html" class="active">عن الدكتور</a>
+    <a href="services.html">الخدمات</a>
+    <a href="contact.html">تواصل معنا</a>
   </nav>
 
   <section class="about-section">
-    <h1>About the Clinic</h1>
+    <h1>عن الدكتور</h1>
 
     <div class="about-content">
-       <img src="https://i.ibb.co/35jwtvgr/FB6-FDC23-2-D28-49-C5-BE13-21-F6-C7-BC20-FA.jpg"  alt="Doctor" class="doctor-img">
+      <img src="https://i.ibb.co/zhfHBsLD/IMG-6947.jpg" alt="Doctor" class="doctor-img">
       <div class="about-text">
-        <h2>Dr. John Smith</h2>
-        <p class="sub">meet our doctor</p>
+        <h2>الدكتور ؟؟؟؟ </h2>
+        <p class="sub">تعرف على طبيبك</p>
         <p>
-          Welcome to our practice! We are dedicated to providing top-quality dental care in a comfortable and caring environment.<br><br>
-          Dr. John Smith has years of experience in helping patients achieve healthy smiles.
+          مرحباً بك في عيادتنا! نحن ملتزمون بتقديم أفضل خدمات طب الأسنان باستخدام أحدث التقنيات الطبية في بيئة مريحة وآمنة.<br><br>
+          الدكتور ؟؟؟ يمتلك سنوات من الخبرة في تقديم العناية الصحية للمرضى ومساعدتهم على تحقيق ابتسامة صحية ومشرقة.<br><br>
+          في عيادتنا، هدفنا ليس فقط علاج الأسنان بل تقديم تجربة مريحة وآمنة لك ولعائلتك.
         </p>
-        <a href="#" class="gallery-btn">View Gallery</a>
+        <a href="index.html">الرئيسية</a>
       </div>
     </div>
   </section>
 
   <section class="services-preview">
-    <h2>Our Services</h2>
+    <h2>خدماتنا</h2>
+    <p>نحن نقدم مجموعة واسعة من الخدمات المتميزة، بما في ذلك: تنظيف الأسنان، التبييض، التقويم، والعلاج الشامل لضمان صحة فمك.</p>
   </section>
 
 </body>
