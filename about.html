@@ -10,18 +10,65 @@
       background-color: #f4f9ff;
       padding: 30px;
       color: #333;
+      margin: 0;
     }
     .container {
-      max-width: 700px;
+      max-width: 900px;
       margin: auto;
       background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
     h1 {
       text-align: center;
       color: #0077cc;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 16px;
+      text-align: justify;
+      margin-bottom: 15px;
+    }
+    .highlight {
+      color: #0077cc;
+      font-weight: bold;
+    }
+    .services {
+      margin-top: 30px;
+      padding: 10px;
+      border-top: 2px solid #0077cc;
+    }
+    .services h3 {
+      color: #0077cc;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .services ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .services li {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    .testimonials, .consultation, .technologies, .prevention, .contact-methods, .special-offer {
+      margin-top: 30px;
+      padding: 15px;
+      background-color: #e1f3ff;
+      border-radius: 10px;
+    }
+    .testimonials h3, .consultation h3, .technologies h3, .prevention h3, .contact-methods h3, .special-offer h3 {
+      color: #0077cc;
+    }
+    .btn {
+      background-color: #0077cc;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -29,9 +76,62 @@
 
 <div class="container">
   <h1>عن العيادة</h1>
-  <p>عيادة Ahmed Dental تأسست لتقديم أفضل خدمات طب الأسنان باستخدام أحدث التقنيات الطبية. نتميز بفريق طبي محترف وبيئة مريحة لكل الزوار.</p>
-  <p>نقدم خدمات: تنظيف الأسنان، الحشوات، التبييض، تقويم الأسنان، والتركيبات.</p>
-  <p>هدفنا الأول: ابتسامتك وصحتك الفموية!</p>
+  <p>أهلاً وسهلاً بك في عيادة <span class="highlight">Ahmed Dental</span>، حيث تجد الرعاية الصحية التي تستحقها لابتسامة مشرقة وحياة صحية.</p>
+  <p>عيادتنا تسعى لتقديم أعلى مستويات الرعاية باستخدام أحدث التقنيات في طب الأسنان، ونحن هنا من أجل راحتك وصحتك الفموية.</p>
+  
+  <div class="services">
+    <h3>خدماتنا:</h3>
+    <ul>
+      <li>تنظيف الأسنان بشكل احترافي</li>
+      <li>الحشوات التجميلية</li>
+      <li>تبييض الأسنان باستخدام تقنيات آمنة</li>
+      <li>تقويم الأسنان الشفاف والمعدني</li>
+      <li>التركيبات الثابتة والمتحركة</li>
+    </ul>
+  </div>
+
+  <div class="testimonials">
+    <h3>آراء المرضى:</h3>
+    <p>"أفضل عيادة أسنان جربتها! الفريق الطبي محترف ويعطونك إحساس بالأمان والراحة." - مريم</p>
+    <p>"لقد حصلت على ابتسامة جديدة تمامًا بفضل العيادة. الخدمة رائعة والتقنيات المستخدمة حديثة جدًا." - أحمد</p>
+  </div>
+
+  <div class="consultation">
+    <h3>استشارة طبية مجانية</h3>
+    <p>إذا كنت بحاجة إلى استشارة بشأن علاج أسنانك، يمكنك حجز استشارة مجانية مع فريقنا الطبي المحترف. نحن هنا لمساعدتك في اتخاذ أفضل القرارات لابتسامتك.</p>
+    <a href="booking.html" class="btn">احجز استشارتك الآن</a>
+  </div>
+
+  <div class="technologies">
+    <h3>التقنيات الحديثة</h3>
+    <p>نستخدم أحدث الأجهزة والتقنيات في عالم طب الأسنان لضمان تقديم خدماتنا بأعلى معايير الجودة. تقنيات مثل الأشعة الرقمية وأجهزة الليزر تساهم في تسريع عملية العلاج وتقليل الألم.</p>
+  </div>
+
+  <div class="prevention">
+    <h3>الفحوصات الوقائية</h3>
+    <p>من خلال فحص دوري لأسنانك، يمكننا اكتشاف المشكلات مبكرًا قبل أن تتحول إلى مشاكل أكبر. احجز فحصك الوقائي اليوم لضمان صحة فمك على المدى الطويل.</p>
+    <a href="booking.html" class="btn">احجز فحصك الآن</a>
+  </div>
+
+  <div class="contact-methods">
+    <h3>طرق التواصل معنا</h3>
+    <p>نحن متاحون للإجابة على أي استفسار أو لحجز موعد عبر:</p>
+    <ul>
+      <li>الهاتف: 123-456-7890</li>
+      <li>البريد الإلكتروني: info@ahmeddental.com</li>
+      <li>متابعة حساباتنا على وسائل التواصل الاجتماعي:</li>
+      <li>فيسبوك: <a href="https://facebook.com/ahmeddental">Ahmed Dental</a></li>
+      <li>إنستغرام: <a href="https://instagram.com/ahmeddental">ahmeddental</a></li>
+    </ul>
+  </div>
+
+  <div class="special-offer">
+    <h3>عرض خاص لزوار العيادة الجدد!</h3>
+    <p>احصل على خصم 20% على أول زيارة لك عند الحجز عبر الموقع. لا تفوت هذه الفرصة!</p>
+    <a href="booking.html" class="btn">احجز الآن</a>
+  </div>
+
+  <p>هدفنا الأول: <span class="highlight">ابتسامتك وصحتك الفموية!</span> نحن هنا لتحقيق ذلك من خلال أحدث الأساليب والاهتمام بتفاصيل العلاج.</p>
 </div>
 
 </body>
