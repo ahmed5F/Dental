@@ -74,13 +74,65 @@
       border-radius: 10px;
       height: 180px;
       object-fit: cover;
+      loading: lazy; /* تحسين تحميل الصور */
     }
 
     .service-card h3 {
       margin-top: 15px;
       color: #0077cc;
     }
+
+    /* تصميم متجاوب */
+    @media (max-width: 768px) {
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* أزرار تواصل سريع */
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .contact-button {
+      background-color: #25D366; /* WhatsApp */
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .contact-button:hover {
+      background-color: #128C7E;
+    }
+
+    /* تقييم المرضى */
+    .review-section {
+      margin-top: 40px;
+    }
+
+    .review-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
   </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXXXX-X');
+  </script>
 </head>
 <body>
 
@@ -108,20 +160,39 @@
     <h2>خدماتنا</h2>
     <div class="services">
       <div class="service-card">
-        <img src="https://i.ibb.co/ntKvTVm/IMG-6927.jpg" alt="تنظيف الأسنان">
+        <img src="https://i.ibb.co/ZzxyKvwP/IMG-6946.jpg" alt="تنظيف الأسنان">
         <h3>تنظيف الأسنان</h3>
         <p>تنظيف احترافي لإزالة الجير والبلاك والحفاظ على صحة اللثة والأسنان.</p>
       </div>
       <div class="service-card">
-        <img src="https://i.ibb.co/pvG7myw5/IMG-6928.jpg" alt="تبييض الأسنان">
+        <img src="https://i.ibb.co/TD0yq521/IMG-6945.jpg" alt="تبييض الأسنان">
         <h3>تبييض الأسنان</h3>
         <p>تقنيات آمنة وفعالة لتبييض أسنانك ومنحك ابتسامة مشرقة وجذابة.</p>
       </div>
       <div class="service-card">
-        <img src="https://i.ibb.co/sdC6BCmN/IMG-6930.jpg" alt="تقويم الأسنان">
+        <img src="https://i.ibb.co/4n1tY7ht/IMG-6943.jpg" alt="تقويم الأسنان">
         <h3>تقويم الأسنان</h3>
         <p>تقويم شفاف ومعدني لتصحيح الأسنان المائلة بطريقة مريحة وعصرية.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- أزرار تواصل سريع -->
+  <div class="contact-buttons">
+    <a href="https://wa.me/xxxxxx" class="contact-button">تواصل عبر واتساب</a>
+    <a href="mailto:info@example.com" class="contact-button">تواصل عبر البريد الإلكتروني</a>
+  </div>
+
+  <!-- قسم تقييم المرضى -->
+  <section class="review-section">
+    <h2>آراء المرضى</h2>
+    <div class="review-card">
+      <h3>أحمد علي</h3>
+      <p>"كانت تجربة رائعة! خدمة ممتازة وأجواء مريحة." </p>
+    </div>
+    <div class="review-card">
+      <h3>سمية محمد</h3>
+      <p>"أطباء محترفون وودودون، أشعر بالراحة التامة عند زيارتهم."</p>
     </div>
   </section>
 
