@@ -1,78 +1,143 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>حجز موعد – Ahmed Dental</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmed Clinic</title>
   <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background-color: #eef6fb;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', sans-serif;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f4f9fb;
+      color: #333;
+    }
+
     header {
-      background-color: #0077cc;
-      color: white;
-      padding: 20px;
+      background: #e7f0f7;
+      padding: 40px;
       text-align: center;
     }
-    form {
-      background: white;
-      max-width: 500px;
-      margin: 40px auto;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-    input, select, button {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
-    }
-    button {
-      background-color: #0077cc;
-      color: white;
+
+    .btn {
+      background: #2b5a7e;
+      color: #fff;
+      padding: 12px 24px;
       border: none;
+      border-radius: 8px;
+      font-size: 16px;
       cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s ease;
     }
-    button:hover {
-      background-color: #005fa3;
+
+    .btn:hover {
+      background: #1f4562;
+    }
+
+    #booking {
+      margin: 80px auto;
+      padding: 30px;
+      width: 90%;
+      max-width: 500px;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 12px;
+    }
+
+    #booking label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+
+    #booking input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    #booking .book {
+      margin-top: 20px;
+      width: 100%;
     }
   </style>
 </head>
 <body>
 
+  <!-- Header Section -->
   <header>
-    <h1>حجز موعد</h1>
+    <h1>ابتسامتك، مسؤوليتنا</h1>
+    
+    <a href="#booking" class="btn">حجز موعد</a>
   </header>
 
-  <form id="bookingForm">
-    <label>الاسم الكامل</label>
-    <input type="text" required />
+  <!-- Booking Section -->
+  <section id="booking">
+    <label>الاسم الثلاثي</label>
+    <input type="text" id="full-name" placeholder="أدخل اسمك الثلاثي" />
+
+    <label>اختار التاريخ</label>
+    <input type="date" id="appointment-date" />
+
+    <label>اختار الوقت</label>
+    <input type="time" id="appointment-time" />
 
     <label>رقم الهاتف</label>
-    <input type="tel" required />
+    <input type="tel" id="phone" placeholder="أدخل رقم الهاتف" />
 
-    <label>التاريخ</label>
-    <input type="date" required />
+    <button class="btn book" onclick="sendToTelegram()">حجز الموعد</button>
+  </section>
 
-    <label>الوقت</label>
-    <select required>
-      <option value="">اختر الوقت</option>
-      <option>9:00 صباحًا</option>
-      <option>10:00 صباحًا</option>
-      <option>11:00 صباحًا</option>
-      <option>1:00 ظهرًا</option>
-      <option>3:00 عصرًا</option>
-    </select>
+  <script>
+    // التحقق مما إذا كان قد تم إرسال الحجز مسبقًا
+    if (sessionStorage.getItem("appointmentBooked") === "true") {
+      // إذا كان قد تم إرسال الحجز، إخفاء نموذج الحجز
+      document.getElementById("booking").style.display = "none";
+    }
 
-    <button type="submit">تأكيد الحجز</button>
-  </form>
+    function sendToTelegram() {
+      var fullName = document.getElementById("full-name").value;
+      var date = document.getElementById("appointment-date").value;
+      var time = document.getElementById("appointment-time").value;
+      var phone = document.getElementById("phone").value;
+
+      if (fullName && date && time && phone) {
+        var message = `حجز موعد جديد:\nالاسم: ${fullName}\nالتاريخ: ${date}\nالوقت: ${time}\nرقم الهاتف: ${phone}`;
+        
+        var telegramBotToken = "7945152379:AAFtLazXVvOSYzxdwFkQKkRDf7HzRgzG9_s"; // استبدل هذا برمز البوت الخاص بك
+        var chatId = "909090929"; // استبدل هذا بمعرف الدردشة الخاص بك
+
+        var url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+        fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            if (data.ok) {
+              alert("تم الحجز بنجاح! سنوافيك بالتفاصيل عبر تليجرام.");
+              sessionStorage.setItem("appointmentBooked", "true"); // تخزين حالة الحجز
+              document.getElementById("booking").style.display = "none"; // إخفاء النموذج بعد الحجز
+            } else {
+              alert("حدث خطأ، حاول مرة أخرى.");
+            }
+          })
+          .catch(error => {
+            alert("حدث خطأ أثناء إرسال البيانات.");
+          });
+      } else {
+        alert("من فضلك أكمل جميع الحقول.");
+      }
+    }
+  </script>
 
 </body>
 </html>
