@@ -18,12 +18,67 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h1 {
+    h1, h2, h3 {
       text-align: center;
       color: #0077cc;
     }
     p {
       line-height: 1.8;
+    }
+    .contact-form input, .contact-form textarea, .contact-form button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    .contact-form button {
+      background-color: #0077cc;
+      color: white;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background-color: #005fa3;
+    }
+    .social-media a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #0077cc;
+    }
+    .social-media a:hover {
+      color: #005fa3;
+    }
+    .team-member {
+      text-align: center;
+    }
+    .team-member img {
+      width: 100px;
+      border-radius: 50%;
+    }
+    .testimonials {
+      margin-top: 30px;
+    }
+    .testimonials .testimonial {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #e9f7ff;
+      border-radius: 5px;
+    }
+    .faq .question {
+      margin-bottom: 15px;
+    }
+    .faq .question h3 {
+      font-size: 1.1em;
+      color: #0077cc;
+    }
+    .quick-links a {
+      display: block;
+      color: #0077cc;
+      text-decoration: none;
+      margin: 10px 0;
+    }
+    .quick-links a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -35,6 +90,72 @@
   <p>العنوان: الناصرية - شارع XX - قرب مركز صحي YY</p>
   <p>البريد الإلكتروني: contact@ahmeddental.com</p>
   <p>ساعات العمل: من 9 صباحًا إلى 4 مساءً (عدا الجمعة)</p>
+
+  <section class="contact-form">
+    <h2>أرسل لنا رسالة</h2>
+    <form action="submit_form.php" method="POST">
+      <label for="name">الاسم:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">البريد الإلكتروني:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="message">رسالتك:</label>
+      <textarea id="message" name="message" required></textarea>
+      
+      <button type="submit">إرسال</button>
+    </form>
+  </section>
+
+  <section class="team">
+    <h2>فريقنا الطبي</h2>
+    <div class="team-member">
+      <img src="doctor2.jpg" alt="دكتور آخر">
+      <h3>د. أحمد حسين</h3>
+      <p>أخصائي تقويم الأسنان ذو خبرة تفوق الـ10 سنوات.</p>
+    </div>
+    <div class="team-member">
+      <img src="doctor3.jpg" alt="دكتور آخر">
+      <h3>د. سارة علي</h3>
+      <p>أخصائية في طب الأسنان التجميلي.</p>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>مراجعات العملاء</h2>
+    <div class="testimonial">
+      <p>"كانت تجربة رائعة! العناية التي تلقيتها كانت استثنائية. أشكر فريق أحمد للأسنان على اهتمامهم." - <strong>سارة محمد</strong></p>
+    </div>
+    <div class="testimonial">
+      <p>"أفضل عيادة في المدينة! الجميع هنا محترفون وودودون. أنصح بها بشدة!" - <strong>محمود عبد الله</strong></p>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>الأسئلة الشائعة</h2>
+    <div class="question">
+      <h3>هل يمكنني حجز موعد عبر الإنترنت؟</h3>
+      <p>نعم، يمكنك حجز الموعد عبر الإنترنت من خلال الرابط المتوفر في صفحة الخدمات.</p>
+    </div>
+    <div class="question">
+      <h3>هل العيادة تتيح دفع الفواتير عبر الإنترنت؟</h3>
+      <p>نعم، يمكنك دفع فواتيرك عبر الإنترنت باستخدام البطاقات المصرفية.</p>
+    </div>
+  </section>
+
+  <section class="quick-links">
+    <h2>روابط سريعة</h2>
+    <a href="services.html">خدماتنا</a>
+    <a href="appointment.html">حجز موعد</a>
+    <a href="contact.html">اتصل بنا</a>
+  </section>
+
+  <section class="social-media">
+    <h2>تابعنا على وسائل التواصل الاجتماعي</h2>
+    <a href="https://facebook.com/ahmeddental" target="_blank">فيسبوك</a>
+    <a href="https://twitter.com/ahmeddental" target="_blank">تويتر</a>
+    <a href="https://instagram.com/ahmeddental" target="_blank">إنستغرام</a>
+  </section>
 </div>
 
 </body>
